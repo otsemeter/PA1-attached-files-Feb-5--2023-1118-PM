@@ -59,17 +59,16 @@ void Array_Shellsort(long *array, int size, long *n_comp)
     long *seq = Generate_2p3q_Seq(size, &sequence_size);
 
     //shell sort using insertion sort
-    for(int x = sequence_size - 1; x >= 0; x--)
+    for(i = 1; i < size; i++)
     {
-        for(i = seq[x]; i < size; i++)
+        for(j = i; j > 0; j--)
         {
-            temp = array[i];
-            for(j = i; j >= seq[x] && array[j - seq[x]] > temp; j -= seq[x])
+            if(array[i - 1] > array[i])
             {
-                array[j] = array[j - seq[x] + 1];
-                *n_comp = *n_comp + 1;
+                temp = array[i - 1];
+                array[i - 1] = array[i];
+                array[i] = temp;
             }
-            array[j] = temp;
         }
     }
     free(seq);

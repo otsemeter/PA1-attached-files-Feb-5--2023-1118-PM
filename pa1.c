@@ -18,7 +18,7 @@ int main(int argc, char ** argv)
     printf("arr: ");
     for(int i = 0; i < arr_size; i++)
     {
-        printf("%d, ", arr[i]);
+        printf("%ld, ", arr[i]);
     
     }
     printf("\nsorted: ");
@@ -26,7 +26,7 @@ int main(int argc, char ** argv)
     Array_Shellsort(arr, arr_size, &n_comp);
     for (int j = 0; j < arr_size; j++)
     {
-        printf("%d, ", arr[j]);
+        printf("%ld, ", arr[j]);
     }
     fprintf(stdout, "\n%ld\n", n_comp);
     Array_Save_To_File(argv[2], arr, arr_size);
